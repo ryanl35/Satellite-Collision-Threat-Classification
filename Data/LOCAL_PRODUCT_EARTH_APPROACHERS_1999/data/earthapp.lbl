@@ -1,0 +1,277 @@
+PDS_VERSION_ID        = PDS3                                                  
+                                                                              
+RECORD_TYPE           = FIXED_LENGTH                                          
+RECORD_BYTES          = 127                                                   
+FILE_RECORDS          = 503                                                   
+                                                                              
+^HEADER               = "EARTHAPP.TAB"                                        
+^TABLE                = ("EARTHAPP.TAB",6)                                    
+                                                                              
+DATA_SET_ID           = "LOCAL_PRODUCT-EARTH-APPROACHERS-1999"                
+PRODUCT_NAME          = "JPL List of Asteroid-Earth Close Approaches"         
+PRODUCT_ID            = "EARTHAPP-199912"                                     
+TARGET_NAME           = ASTEROID                                              
+START_TIME            = 1999-10-05T06:31Z                                     
+STOP_TIME             = 2099-11-29T16:14Z                                     
+PRODUCT_CREATION_TIME = 1999-11-19                                            
+                                                                              
+DESCRIPTION           = "                                                     
+                                                                              
+  This table presents a list of predicted close approaches to Earth           
+  by Potentially Hazardous Asteroids (PHAs). To be classified as a            
+  PHA, an asteroid must physically approach within 0.2AU of Earth             
+  and have an absolute magnitude brighter than 22.0.                          
+                                                                              
+  It was downloaded from the JPL Near Earth Object (NEO) Program              
+  Website, from this URL:                                                     
+                                                                              
+         http://neo.jpl.nasa.gov/neo/pha_ca_date_f.html                       
+                                                                              
+  Minor cosmetic changes were made to remove a flag character from            
+  an otherwise numeric field and to add to change to integer values           
+  to scientific notation in another field. A PDS label was then               
+  written using the descriptive material provided at the bottom of            
+  the original web page.                                                      
+                                                                              
+    NOTE that this page is updated much more frequently (several              
+    times a week) at the above URL than it is here. For the                   
+    latest version, please check the NEO web site.                            
+                                                                              
+  The table is made available here by the kind permission of the JPL          
+  NEO/PHA team: Alan Chamberlin, who maintains the table for the              
+  NASA/JPL NEO program office; Paul Chodas, who designs much of the           
+  close approach software; Mike Keesey; Jon Giorgini; Don Yoemans,            
+  the JPL Solar Systems Dynamics Group supervisor; and Mike Keesey,           
+  who maintains the web site.                                                 
+                                                                              
+  For more information on NEOs and PHAs, including a more recent              
+  version of this file, please see the NEO Program home page                  
+  (http://neo.jpl.nasa.gov) and related sites.                                
+  "                                                                           
+                                                                              
+OBJECT     = HEADER                                                           
+  HEADER_TYPE        = COLUMN_LABELS                                          
+  BYTES              = 635                                                    
+  RECORDS            = 5                                                      
+  INTERCHANGE_FORMAT = ASCII                                                  
+  DESCRIPTION        = "Column labels for ease of visual inspection"          
+END_OBJECT = HEADER                                                           
+                                                                              
+OBJECT     = TABLE                                                            
+  NAME               = "EARTH APPROACHERS"                                    
+  COLUMNS            = 19                                                     
+  INTERCHANGE_FORMAT = ASCII                                                  
+  ROW_BYTES          = 127                                                    
+  ROWS               = 498                                                    
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 1                                                         
+    NAME          = ASTEROID_NUMBER                                           
+    START_BYTE    = 1                                                         
+    BYTES         = 5                                                         
+    DATA_TYPE     = ASCII_INTEGER                                             
+    FORMAT        = I5                                                        
+    DESCRIPTION   = "The asteroid catalog number, if any"                     
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 2                                                         
+    NAME          = ASTEROID_ID                                               
+    START_BYTE    = 7                                                         
+    BYTES         = 17                                                        
+    DATA_TYPE     = CHARACTER                                                 
+    FORMAT        = A17                                                       
+    DESCRIPTION   = "The name or principal designation of the asteroid"       
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 3                                                         
+    NAME          = APPROACH_DATE                                             
+    START_BYTE    = 26                                                        
+    BYTES         = 11                                                        
+    DATA_TYPE     = CHARACTER                                                 
+    FORMAT        = A11                                                       
+    DESCRIPTION   = "The nominal date of close approach, in the form          
+      YYYY-Mon-DD"                                                            
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 4                                                         
+    NAME          = APPROACH_HOUR                                             
+    START_BYTE    = 38                                                        
+    BYTES         = 2                                                         
+    DATA_TYPE     = ASCII_INTEGER                                             
+    FORMAT        = I2                                                        
+    UNIT          = HOURS                                                     
+    DESCRIPTION   = "Nominal close approach hour"                             
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 5                                                         
+    NAME          = APPROACH_MINUTE                                           
+    START_BYTE    = 41                                                        
+    BYTES         = 2                                                         
+    DATA_TYPE     = ASCII_INTEGER                                             
+    FORMAT        = I2                                                        
+    UNIT          = MINUTES                                                   
+    DESCRIPTION   = "Nominal close appraoch minute"                           
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 6                                                         
+    NAME          = LIMIT_FLAG                                                
+    START_BYTE    = 44                                                        
+    BYTES         = 1                                                         
+    DATA_TYPE     = CHARACTER                                                 
+    FORMAT        = A1                                                        
+    DESCRIPTION   = "'<' if the 3 sigma value following is an upper limit     
+      otherwise blank"                                                        
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 7                                                         
+    NAME          = "3 SIGMA UNCERTAINTY"                                     
+    START_BYTE    = 45                                                        
+    BYTES         = 7                                                         
+    DATA_TYPE     = CHARACTER                                                 
+    FORMAT        = A7                                                        
+    DESCRIPTION   = "3-sigma uncertainty in the nominal appraoch date,        
+      given in the form D/HH:MM"                                              
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 8                                                         
+    NAME          = LD_NOMINAL_MISS_DISTANCE                                  
+    START_BYTE    = 54                                                        
+    BYTES         = 4                                                         
+    DATA_TYPE     = ASCII_REAL                                                
+    FORMAT        = "F4.1"                                                    
+    UNIT          = LUNAR_DIAMETERS                                           
+    DESCRIPTION   = "Nominal (most likely) miss distance in lunar diameters"  
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 9                                                         
+    NAME          = AU_NOMINAL_MISS_DISTANCE                                  
+    START_BYTE    = 59                                                        
+    BYTES         = 6                                                         
+    DATA_TYPE     = ASCII_REAL                                                
+    FORMAT        = "F6.4"                                                    
+    UNIT          = AU                                                        
+    DESCRIPTION   = "Nominal (most likely) miss distance, in AU"              
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 10                                                        
+    NAME          = MINIMUM_MISS_DISTANCS                                     
+    START_BYTE    = 66                                                        
+    BYTES         = 6                                                         
+    DATA_TYPE     = ASCII_REAL                                                
+    FORMAT        = "F6.4"                                                    
+    UNIT          = AU                                                        
+    DESCRIPTION   = "Minimum possible miss distance, in AU.  This is          
+      based on the 3-sigma Earth target-plane error ellipse"                  
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 11                                                        
+    NAME          = RELATIVE_VELOCITY                                         
+    START_BYTE    = 74                                                        
+    BYTES         = 6                                                         
+    DATA_TYPE     = ASCII_REAL                                                
+    FORMAT        = "F6.2"                                                    
+    UNIT          = "KM/S"                                                    
+    DESCRIPTION   = "Relative velocity at closest approach"                   
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 12                                                        
+    NAME          = IMPACT_PROB_FLAG                                          
+    START_BYTE    = 82                                                        
+    BYTES         = 1                                                         
+    DATA_TYPE     = CHARACTER                                                 
+    FORMAT        = A1                                                        
+    DESCRIPTION   = "'<' if the IMPACT_PROBABILITY, following, is an          
+      upper limit"                                                            
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 13                                                        
+    NAME          = IMPACT_PROBABILITY                                        
+    START_BYTE    = 84                                                        
+    BYTES         = 5                                                         
+    DATA_TYPE     = ASCII_REAL                                                
+    FORMAT        = "E5.0"                                                    
+    DESCRIPTION   = "Probability of Earth impact, based on the Earth          
+      target-plane error ellipse. The value '< 1e-09' means less              
+      than one chance in a billion of impact."                                
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 14                                                        
+    NAME          = N_SIG                                                     
+    START_BYTE    = 91                                                        
+    BYTES         = 5                                                         
+    DATA_TYPE     = ASCII_REAL                                                
+    FORMAT        = "E5.1"                                                    
+    DESCRIPTION   = "Scaling factor necessary to expand the target-plane      
+      error ellipse to allow for an Earth-grazing impact"                     
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 15                                                        
+    NAME          = H                                                         
+    START_BYTE    = 98                                                        
+    BYTES         = 4                                                         
+    DATA_TYPE     = ASCII_REAL                                                
+    FORMAT        = "F4.1"                                                    
+    UNIT          = MAGNITUDES                                                
+    DESCRIPTION   = "Absolute visual magnitude (smaller H implies LARGER      
+      asteroid diameter. Objects fainter than H  =22.0 (i.e., with H > 22.0)  
+      are not considered to be potentially hazardous."                        
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 16                                                        
+    NAME          = NUMBER_OF_OBSERVATIONS                                    
+    START_BYTE    = 104                                                       
+    BYTES         = 4                                                         
+    DATA_TYPE     = ASCII_INTEGER                                             
+    FORMAT        = I4                                                        
+    DESCRIPTION   = "Number of observations used in the orbit solution"       
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 17                                                        
+    NAME          = RADAR_FLAG                                                
+    START_BYTE    = 108                                                       
+    BYTES         = 1                                                         
+    DATA_TYPE     = CHARACTER                                                 
+    FORMAT        = A1                                                        
+    DESCRIPTION   = "'*' indicates radar observations are included in         
+      the preceding NUMBER_OF_OBSERVATIONS"                                   
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 18                                                        
+    NAME          = DATA_ARC                                                  
+    START_BYTE    = 111                                                       
+    BYTES         = 5                                                         
+    DATA_TYPE     = ASCII_INTEGER                                             
+    FORMAT        = I5                                                        
+    UNIT          = DAYS                                                      
+    DESCRIPTION   = "Data arc of observations used in the orbit solution"     
+  END_OBJECT = COLUMN                                                         
+                                                                              
+  OBJECT     = COLUMN                                                         
+    COLUMN_NUMBER = 19                                                        
+    NAME          = ORBIT_REFERENCE                                           
+    START_BYTE    = 118                                                       
+    BYTES         = 8                                                         
+    DATA_TYPE     = CHARACTER                                                 
+    FORMAT        = A8                                                        
+    DESCRIPTION   = "Orbit solution reference (JPL internal code)"            
+  END_OBJECT = COLUMN                                                         
+                                                                              
+END_OBJECT = TABLE                                                            
+END                                                                           

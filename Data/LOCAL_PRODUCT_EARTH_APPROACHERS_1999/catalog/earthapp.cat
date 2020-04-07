@@ -1,0 +1,71 @@
+PDS_VERSION_ID = PDS3                                                         
+                                                                              
+OBJECT     = DATA_SET                                                         
+  DATA_SET_ID       = "LOCAL_PRODUCT-EARTH-APPROACHERS-1999"                  
+  DATA_SET_LOCAL_ID = "EARTHAPP"                                              
+                                                                              
+                                                                              
+  OBJECT     = DATA_SET_INFORMATION                                           
+    DATA_SET_NAME                  = "EARTH-ASTEROID CLOSE APPROACHES 1999"   
+    DATA_SET_COLLECTION_MEMBER_FLG = N                                        
+    DETAILED_CATALOG_FLAG          = N                                        
+    DATA_OBJECT_TYPE               = TABLE                                    
+    DATA_SET_RELEASE_DATE          = 1999-12-01                               
+    PRODUCER_FULL_NAME             = "M. S. W. Keesey"                        
+                                                                              
+    START_TIME                     = 1999-10-05T06:31Z                        
+    STOP_TIME                      = 2099-11-29T16:14Z                        
+                                                                              
+    DATA_SET_DESC                  = "                                        
+                                                                              
+      Data Set Overview                                                       
+      =================                                                       
+                                                                              
+      This table presents a list of predicted close approaches to Earth       
+      by Potentially Hazardous Asteroids (PHAs). To be classified as a        
+      PHA, an asteroid must physically approach within 0.2AU of Earth         
+      and have an absolute magnitude brighter than 22.0.                      
+                                                                              
+      The table is made available here by the kind permission of the JPL      
+      NEO/PHA team: Alan Chamberlin, who maintains the table for the          
+      NASA/JPL NEO program office; Paul Chodas, who designs much of the       
+      close approach software; Mike Keesey; Jon Giorgini; Don Yoemans,        
+      the JPL Solar Systems Dynamics Group supervisor; and Mike Keesey,       
+      who maintains the web site.                                             
+                                                                              
+                                                                              
+      Parameters                                                              
+      ==========                                                              
+                                                                              
+      The data file lists object identification(s), time and distance of      
+      the close approach and 3-sigma limits.                                  
+                                                                              
+                                                                              
+      Media/Format                                                            
+      ============                                                            
+                                                                              
+      The data set is available for direct down-loading from the Small Bodies 
+      Node web site.                                                          
+      "                                                                       
+                                                                              
+    CONFIDENCE_LEVEL_NOTE          = "None provided"                          
+                                                                              
+  END_OBJECT = DATA_SET_INFORMATION                                           
+                                                                              
+                                                                              
+  OBJECT     = DATA_SET_TARGET                                                
+    TARGET_NAME = ASTEROID                                                    
+  END_OBJECT = DATA_SET_TARGET                                                
+                                                                              
+  OBJECT     = DATA_SET_HOST                                                  
+    INSTRUMENT_HOST_ID = "N/A"                                                
+    INSTRUMENT_ID      = "N/A"                                                
+  END_OBJECT = DATA_SET_HOST                                                  
+                                                                              
+  OBJECT     = DATA_SET_REFERENCE_INFORMATION                                 
+    REFERENCE_KEY_ID = KEESEYETAL1994                                         
+  END_OBJECT = DATA_SET_REFERENCE_INFORMATION                                 
+                                                                              
+END_OBJECT = DATA_SET                                                         
+                                                                              
+END                                                                           
